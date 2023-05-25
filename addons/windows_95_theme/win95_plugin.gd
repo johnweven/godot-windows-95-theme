@@ -15,3 +15,11 @@ func _enter_tree():
 func _exit_tree():
 	# Clean-up of the plugin goes here.
 	pass
+
+func _disable_plugin():
+	var interface: EditorInterface = get_editor_interface()
+	var settings: EditorSettings = interface.get_editor_settings()
+	settings.set("interface/theme/preset", "")
+	settings.set("interface/theme/base_color", Color.SILVER)
+	settings.set("interface/theme/contrast",1.15)
+	settings.set("interface/theme/custom_theme", '')
